@@ -7,7 +7,7 @@ export const projects = [
     category: 'pixel',
     tags: ['Pixel Display', 'Node.js', 'Strava API'],
     icon: '🏃',
-    github: 'https://github.com/jamesgrich/strava-pixoo', // update once uploaded
+    github: 'https://github.com/jamesgrich/strava-pixoo',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const projects = [
     category: 'pixel',
     tags: ['Pixel Display', 'Node.js', 'Web Scraping'],
     icon: '🎵',
-    github: 'https://github.com/jamesgrich/norwich-gigs-pixoo', // update once uploaded
+    github: 'https://github.com/jamesgrich/norwich-gigs-pixoo',
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const projects = [
     category: 'web',
     tags: ['Web App', 'React', 'Node.js', 'SQLite', 'Strava API'],
     icon: '📊',
-    github: 'https://github.com/jamesgrich/running-health-tracker', // update once uploaded
+    github: 'https://github.com/jamesgrich/health-tracker',
   },
   {
     id: 4,
@@ -37,6 +37,6 @@ export const projects = [
     category: 'web',
     tags: ['Web App', 'React', 'Vite', 'Open-Meteo API'],
     icon: '🌤️',
-    github: 'https://github.com/jamesgrich/weather-app-runners', // update once uploaded
+    github: 'https://github.com/jamesgrich/weather-app',
   },
 ]
