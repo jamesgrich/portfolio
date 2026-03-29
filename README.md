@@ -1,16 +1,53 @@
-# React + Vite
+# James Richardson — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site built with React and deployed to GitHub Pages at [jamesrichardson.dev](https://jamesrichardson.dev).
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **Vite**
+- **Material UI v7** — dark theme with violet/cyan palette
+- **React Router v7** — client-side routing
+- **EmailJS** — contact form email delivery (no backend)
+- **JetBrains Mono** (headings) + **Inter** (body text)
 
-## React Compiler
+## Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with typewriter role animation and portrait |
+| `/cv` | Interactive CV with Support / Dev filter on experience |
+| `/projects` | Project cards with Pixel Display / Web App filter |
+| `/contact` | Contact form — sends email via EmailJS |
 
-## Expanding the ESLint configuration
+## Local Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+## Deployment
+
+Deploys to GitHub Pages via the `gh-pages` branch:
+
+```bash
+npm run deploy
+```
+
+The `public/CNAME` file handles the custom domain. GitHub Pages must be configured to serve from the `gh-pages` branch.
+
+## Configuration
+
+### EmailJS
+Update the three constants at the top of `src/pages/Contact.jsx`:
+```js
+const EMAILJS_SERVICE_ID  = 'your_service_id'
+const EMAILJS_TEMPLATE_ID = 'your_template_id'
+const EMAILJS_PUBLIC_KEY  = 'your_public_key'
+```
+
+### Projects
+Edit `src/data/projects.js` to update project cards and GitHub links.
+
+### CV
+All CV content lives in the `cv` data object at the top of `src/pages/CV.jsx` — update it directly when your experience changes.
