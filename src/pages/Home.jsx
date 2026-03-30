@@ -76,19 +76,6 @@ export default function Home() {
 
           {/* Text */}
           <Box sx={{ flex: 1 }}>
-            <Chip
-              label="🟢 Open to work — available from 7th April 2026"
-              sx={{
-                mb: 4,
-                backgroundColor: 'rgba(6, 182, 212, 0.1)',
-                border: '1px solid rgba(6, 182, 212, 0.4)',
-                color: '#e2e8f0',
-                fontWeight: 600,
-                fontSize: { xs: '0.7rem', md: '0.75rem' },
-                letterSpacing: '0.03em',
-              }}
-            />
-
             <Typography
               variant="h1"
               sx={{ fontSize: { xs: '2rem', md: '2.8rem' }, fontWeight: 700, lineHeight: 1.3, mb: 2 }}
