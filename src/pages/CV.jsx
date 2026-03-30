@@ -16,7 +16,6 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 // ─── Update this data object whenever your CV changes ────────────────────────
 const cv = {
   name: 'James Richardson',
-  tagline: 'Technical Support Engineer & Full Stack Developer',
   openToWork: true,
   availableFrom: '7th April 2026',
   summary: [
@@ -263,9 +262,6 @@ export default function CV() {
               </Button>
             </Tooltip>
           </Box>
-          <Typography sx={{ color: 'primary.light', fontWeight: 500, mb: 2, fontSize: '1rem', mt: { xs: 1.5, md: 0 } }}>
-            {cv.tagline}
-          </Typography>
           {cv.summary.map((para, i) => (
             <Typography key={i} sx={{ color: '#cbd5e1', maxWidth: 680, lineHeight: 1.85, fontSize: { xs: '0.97rem', md: '0.92rem' }, mb: i < cv.summary.length - 1 ? 1.5 : 0 }}>
               {para}
