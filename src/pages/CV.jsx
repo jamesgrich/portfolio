@@ -19,8 +19,10 @@ const cv = {
   tagline: 'Technical Support Engineer & Full Stack Developer',
   openToWork: true,
   availableFrom: '7th April 2026',
-  summary:
-    "Engineering-minded Technical Support Engineer with a track record spanning SaaS, telecoms, media, and enterprise software. I sit comfortably at the intersection of support, development, and product — whether that's triaging a production incident at 3am, writing SQL to surface the root cause, building an automation framework, or shipping a fix myself. Outside of work I build full-stack web apps and IoT pixel display projects just for fun.",
+  summary: [
+    "Engineering-minded Technical Support Engineer specialising in SaaS platforms, APIs, and data-driven systems. Experienced in debugging complex production issues, performing root cause analysis, and working closely with engineering teams to improve reliability and resolve defects.",
+    "Operates at the intersection of support, development, and product — with hands-on experience in SQL, automation, and system-level troubleshooting. Outside of work, builds full-stack applications and IoT projects to stay technically sharp.",
+  ],
 
   skills: {
     '💻 Languages': ['JavaScript', 'SQL', 'Java', 'HTML', 'CSS', 'Flutter'],
@@ -36,7 +38,7 @@ const cv = {
       company: 'Naked Wines',
       role: 'Level 2/3 Technical Support Engineer',
       period: 'May 2025 – Present',
-      type: 'support',
+      type: 'both',
       bullets: [
         'Own complex technical incidents end-to-end — from initial triage through root cause analysis to post-incident review — across a high-traffic global ecommerce platform',
         'Partner with engineering and product teams to identify systemic issues, reducing repeat incident rates by improving monitoring coverage in OpenSearch and Prometheus',
@@ -49,7 +51,7 @@ const cv = {
       company: 'Tiger Eye Consulting',
       role: 'Technical Analyst',
       period: 'Aug 2024 – May 2025',
-      type: 'both',
+      type: 'support',
       bullets: [
         'Delivered technical analysis and solution design across enterprise iManage document management deployments',
         'Acted as the primary technical liaison between stakeholders and delivery teams, translating complex requirements into clear, actionable specifications',
@@ -85,7 +87,7 @@ const cv = {
       company: 'Archant',
       role: 'Project Support Analyst',
       period: 'Dec 2018 – May 2021',
-      type: 'both',
+      type: 'support',
       bullets: [
         'Significantly increased team test efficiency by designing and building a Selenium-based automation framework for regression testing across a suite of online news sites',
         'Elicited requirements for new features by collaborating closely with Development and Support teams, ensuring thorough understanding of business needs before delivery',
@@ -97,7 +99,7 @@ const cv = {
       company: 'Proteo',
       role: 'Analyst Tester',
       period: 'May 2018 – Nov 2018',
-      type: 'dev',
+      type: 'qa',
       bullets: [
         'Led end-to-end testing of a new GPS tracking solution for haulage drivers, ensuring reliability across diverse real-world conditions',
         'Automated key workflows of the online transport management system, improving regression coverage and reducing manual testing overhead',
@@ -108,7 +110,7 @@ const cv = {
       company: 'SupaPass',
       role: 'Software Test Engineer',
       period: 'Jan 2016 – May 2018',
-      type: 'dev',
+      type: 'qa',
       bullets: [
         "Collaborated closely with the Senior Android Developer to automate end-to-end user journeys in the Android app using Google's Espresso framework",
         'Maintained comprehensive test plans providing significant coverage across web, mobile, and tablet platforms, enabling confident and frequent releases',
@@ -264,9 +266,11 @@ export default function CV() {
           <Typography sx={{ color: 'primary.light', fontWeight: 500, mb: 2, fontSize: '1rem', mt: { xs: 1.5, md: 0 } }}>
             {cv.tagline}
           </Typography>
-          <Typography sx={{ color: '#cbd5e1', maxWidth: 680, lineHeight: 1.85, fontSize: { xs: '0.97rem', md: '0.92rem' } }}>
-            {cv.summary}
-          </Typography>
+          {cv.summary.map((para, i) => (
+            <Typography key={i} sx={{ color: '#cbd5e1', maxWidth: 680, lineHeight: 1.85, fontSize: { xs: '0.97rem', md: '0.92rem' }, mb: i < cv.summary.length - 1 ? 1.5 : 0 }}>
+              {para}
+            </Typography>
+          ))}
         </Box>
 
         {/* Skills */}

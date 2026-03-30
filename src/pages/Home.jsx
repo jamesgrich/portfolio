@@ -118,8 +118,7 @@ export default function Home() {
             </Typography>
 
             <Typography variant="body2" sx={{ color: 'text.secondary', maxWidth: 520, mb: 4 }}>
-              Currently exploring: TypeScript, cloud infrastructure, and anything that automates
-              something tedious.
+              Currently exploring: Python, cloud infrastructure.
             </Typography>
 
             <Box sx={{ display: 'flex', gap: 1, justifyContent: { xs: 'center', md: 'flex-start' } }}>
