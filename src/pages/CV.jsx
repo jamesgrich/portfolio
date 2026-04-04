@@ -232,7 +232,7 @@ export default function CV() {
               </Typography>
               {cv.openToWork && (
                 <Chip
-                  label={`🟢 Open to work — from ${cv.availableFrom}`}
+                  label="🟢 Available to start immediately — no notice period"
                   sx={{
                     backgroundColor: 'rgba(6, 182, 212, 0.15)',
                     border: '1px solid rgba(6, 182, 212, 0.6)',

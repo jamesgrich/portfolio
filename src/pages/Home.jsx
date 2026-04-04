@@ -108,6 +108,20 @@ export default function Home() {
               Currently exploring: Python, cloud infrastructure.
             </Typography>
 
+            <Box sx={{ mb: 3, display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' } }}>
+              <Chip
+                label="🟢 Ready to work — available immediately, no notice period"
+                sx={{
+                  backgroundColor: 'rgba(6, 182, 212, 0.15)',
+                  border: '1px solid rgba(6, 182, 212, 0.6)',
+                  color: '#e2e8f0',
+                  fontWeight: 700,
+                  fontSize: { xs: '0.72rem', md: '0.82rem' },
+                  height: { xs: 28, md: 32 },
+                }}
+              />
+            </Box>
+
             <Box sx={{ display: 'flex', gap: 1, justifyContent: { xs: 'center', md: 'flex-start' } }}>
               <Tooltip title="GitHub">
                 <IconButton
