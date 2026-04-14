@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import ReCAPTCHA from 'react-google-recaptcha'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
@@ -18,13 +19,21 @@ const EMAILJS_TEMPLATE_ID = 'template_ddmzcxw'
 const EMAILJS_PUBLIC_KEY = 'dWCTx7HcFw-C38VB7'
 // ─────────────────────────────────────────────────────────────────────────────
 
+// ─── reCAPTCHA config ────────────────────────────────────────────────────────
+// Get a free v2 site key at https://www.google.com/recaptcha/admin
+// Register domain: jamesrichardson.dev (and localhost for dev)
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY
+// ─────────────────────────────────────────────────────────────────────────────
+
 const INITIAL_FORM = { from_name: '', reply_to: '', message: '' }
 
 export default function Contact() {
   const formRef = useRef(null)
+  const captchaRef = useRef(null)
   const [form, setForm] = useState(INITIAL_FORM)
   const [status, setStatus] = useState(null) // 'success' | 'error' | null
   const [loading, setLoading] = useState(false)
+  const [captchaToken, setCaptchaToken] = useState(null)
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -44,6 +53,8 @@ export default function Contact() {
       )
       setStatus('success')
       setForm(INITIAL_FORM)
+      setCaptchaToken(null)
+      captchaRef.current?.reset()
     } catch {
       setStatus('error')
     } finally {
@@ -130,6 +141,14 @@ export default function Contact() {
             sx={inputSx}
           />
 
+          <ReCAPTCHA
+            ref={captchaRef}
+            sitekey={RECAPTCHA_SITE_KEY}
+            theme="dark"
+            onChange={(token) => setCaptchaToken(token)}
+            onExpired={() => setCaptchaToken(null)}
+          />
+
           {status === 'success' && (
             <Alert severity="success" icon={false} sx={{ fontSize: '0.82rem' }}>
               ✅ Message sent — I'll get back to you soon!
@@ -149,7 +168,7 @@ export default function Contact() {
             variant="contained"
             color="primary"
             endIcon={loading ? <CircularProgress size={16} color="inherit" /> : <SendIcon />}
-            disabled={loading || !form.from_name || !form.reply_to || !form.message}
+            disabled={loading || !form.from_name || !form.reply_to || !form.message || !captchaToken}
             sx={{ py: 1.3, fontSize: '0.9rem', alignSelf: { xs: 'stretch', sm: 'flex-end' }, px: 3 }}
           >
             {loading ? 'Sending...' : 'Send'}
