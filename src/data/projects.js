@@ -39,4 +39,14 @@ export const projects = [
     icon: '🌤️',
     github: 'https://github.com/jamesgrich/weather-app',
   },
+  {
+    id: 5,
+    title: 'Beer Festival White-Label App',
+    description:
+      'A fully white-label beer festival platform with three apps sharing one Firebase backend: a mobile attendee app for browsing and saving a tasting list, a staff back-office portal with admin and vendor roles, and a live TV display board for wall screens and projectors. Festivals configure their own name, logo and colour scheme with no code changes. Beer lists import via CSV, image photo (Claude AI extraction), or paste text. Stock status (Available / Low / Sold Out) updates in real time across all three apps the moment a vendor changes it.',
+    category: 'web',
+    tags: ['Web App', 'Firebase', 'Vanilla JS', 'Claude API', 'White-Label'],
+    icon: '🍺',
+    github: 'https://github.com/jamesgrich/beer-festival-whitelabel',
+  },
 ]
