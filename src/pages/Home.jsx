@@ -2,7 +2,6 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import Chip from '@mui/material/Chip'
 import Tooltip from '@mui/material/Tooltip'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
@@ -107,20 +106,6 @@ export default function Home() {
             <Typography variant="body2" sx={{ color: 'text.secondary', maxWidth: 520, mb: 4 }}>
               Currently exploring: Python, cloud infrastructure.
             </Typography>
-
-            <Box sx={{ mb: 3, display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' } }}>
-              <Chip
-                label="🟢 Ready to work — available immediately, no notice period"
-                sx={{
-                  backgroundColor: 'rgba(6, 182, 212, 0.15)',
-                  border: '1px solid rgba(6, 182, 212, 0.6)',
-                  color: '#e2e8f0',
-                  fontWeight: 700,
-                  fontSize: { xs: '0.72rem', md: '0.82rem' },
-                  height: { xs: 28, md: 32 },
-                }}
-              />
-            </Box>
 
             <Box sx={{ display: 'flex', gap: 1, justifyContent: { xs: 'center', md: 'flex-start' } }}>
               <Tooltip title="GitHub">

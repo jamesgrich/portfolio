@@ -16,8 +16,7 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 // ─── Update this data object whenever your CV changes ────────────────────────
 const cv = {
   name: 'James Richardson',
-  openToWork: true,
-  availableFrom: '7th April 2026',
+  openToWork: false,
   summary: [
     "Engineering-minded Technical Support Engineer specialising in SaaS platforms, APIs, and data-driven systems. Experienced in debugging complex production issues, performing root cause analysis, and working closely with engineering teams to improve reliability and resolve defects.",
     "Operates at the intersection of support, development, and product — with hands-on experience in SQL, automation, and system-level troubleshooting. Outside of work, builds full-stack applications and IoT projects to stay technically sharp.",
